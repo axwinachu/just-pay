@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 public class Transaction {
-    private int id;
+    private Long id;
 
     private String senderId;
 
