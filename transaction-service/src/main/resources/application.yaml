@@ -3,7 +3,7 @@ spring:
     name: transaction-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/tododb?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/tododb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: 2465
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -20,3 +20,11 @@ spring:
   sql:
     init:
       mode: always
+
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+      properties:
+        spring.json.add.type.headers: false

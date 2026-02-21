@@ -5,6 +5,8 @@ import com.just_pay.transaction_service.dto.TransferResponse;
 import com.just_pay.transaction_service.model.Transaction;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
+
 @Component
 public class TransactionMapper {
     public Transaction tranferRequestToTransaction(TransferRequest transferRequest){
@@ -12,6 +14,7 @@ public class TransactionMapper {
                 .senderId(transferRequest.getSenderId())
                 .receiverId(transferRequest.getReceiverId())
                 .status("paid")
+                .timeStamp(LocalDateTime.now())
                 .amount(transferRequest.getAmount()).build();
     }
 

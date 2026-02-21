@@ -3,7 +3,7 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for transaction-service" enabled="true">
+      <profile name="Annotation profile for notification-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -12,11 +12,15 @@
         </processorPath>
         <module name="transaction-service" />
         <module name="user-service" />
+        <module name="notification-service" />
+        <module name="reward-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="notification-service" options="-parameters" />
+      <module name="reward-service" options="-parameters" />
       <module name="transaction-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
