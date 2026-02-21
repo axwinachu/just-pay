@@ -3,9 +3,9 @@ package com.just_pay.notification_service.facade;
 import com.just_pay.notification_service.dto.Transaction;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class TransactionConsumer {
 
     @KafkaListener(
